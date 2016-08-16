@@ -1,0 +1,35 @@
+<li class="c-cardItem alignc overflow-visible">
+    <div class="relative full-width">
+        <div class="border-gray bg-white border-radius-6-top">
+            <div class="pad-lv3">
+                <p class="small-meta fsi below12 dim-el">{% if showVolumeMeta %}Volume {{ post.volume }}, {% endif %}Issue {{ post.issue }}</p>
+                <h3 class="fsn fwn nomargin below6"><a href="{{ post.link }}" target="_blank">{{ post.title }}</a></h3>
+                <p class="below24 small-meta dim-el">{{ post.date | date: "%B %d, %Y" }}</p>
+            </div>
+        </div>
+        <div class="border-gray border-top-none border-radius-6-bottom selfclear bg-gray-light pad-lv2">
+            <div style="margin-top: -30px;">
+                {% if post.author %}
+                    {% for author in post.author %}
+                        {% assign i = site.data.authors[author] %}
+                        <div class="author-wrapper relative mar-lv1 mar-tb0 inline-block">
+                            <a href="{{ i.link }}" target="_blank">
+                                <img class="rounded centered border-gray author-image" src="{{ i.image }}" alt="{{ i.name }}{% if i.title %}, {{ i.title }}{% endif %}" style="max-width:60px;">
+                            </a>
+                            <div class="author-bubble zin-lv2" style="display:none">
+                                <p class="nomargin">{{ i.name }}</p>
+                                {% if i.title %}
+                                    <p class="mar-lv1 mar-lr0 small-meta fsi">{{ i.title }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="rounded centered bg-white border-gray" style="max-width:60px;">
+                        <img class="rounded centered pad-lv1" src="{{ site.url }}/assets/freddie_wink.svg" alt="Freddie von Chimpenheimer IV" height="58">
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</li>

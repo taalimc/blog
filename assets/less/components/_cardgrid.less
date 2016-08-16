@@ -1,0 +1,30 @@
+// CARD GRID COMPONENT
+//
+// This element is used on the UX Newsletter site to display a grid of articles.
+// Heavily based on flexbox. Make sure to test in other browsers
+//
+// -----------------------------------
+
+
+.c-cardGrid {
+    .displayFlex();
+    .flexWrap(wrap);
+    .flexJustifyContents(flex-start);
+    .flexAlign(stretch);
+}
+
+.c-cardItem {
+    .displayFlex();
+        min-width:210px;
+        width: 33%;
+        padding: 0 15px 15px 0;
+
+    @media only screen and (max-width:@xlphone) {
+        .flexGrow(1);
+        width: 50%;
+    }
+
+    @media only screen and (max-width:@phone) {
+        width: 100%;
+    }
+}

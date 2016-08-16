@@ -1,0 +1,87 @@
+
+.displayFlex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flexWrap(@wrap) {
+  -webkit-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
+.flexAlign(@alignment) {
+  -webkit-align-items: @alignment;
+       -ms-flex-align: @alignment;
+          align-items: @alignment;
+}
+
+.flexColumn() {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flexRow() {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.flexSpaceBetween() {
+  -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+// Except space-between
+.flexJustifyContents(@align) {
+    -webkit-justify-content: @align;
+              -ms-flex-pack: @align;
+            justify-content: @align;
+}
+
+.flexGrow(@val) {
+  -webkit-flex-grow: @val;
+  -ms-flex-positive: @val;
+          flex-grow: @val;
+}
+
+.flexEnd() {
+   -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+           align-self: flex-end;
+}
+
+.flexSelf(@val) {
+    -webkit-align-self: @val;
+    -ms-flex-item-align: @val;
+    align-self: @val;
+}
+
+.flexEqualWidth() {
+    -webkit-box: 1 1 100%;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+}
+
+// flex: 1 0 25%;
+// flex: 1 1 auto;
+// values = grow shrink basis
+.flex(@flexvalue) {
+    -webkit-flex: ~"@{flexvalue}";
+    -ms-flex    : ~"@{flexvalue}";
+    flex        : ~"@{flexvalue}";
+}
+
+// Wrapping not supported in IE10
+// flex-flow: row nowrap;
+// flex-flow: column wrap;
+// flow = direction (column/row) || wrap property (wrap/nowrap)
+.flexFlow(@flow) {
+    -webkit-flex-flow: ~"@{flow}";
+    flex-flow: ~"@{flow}";
+}
